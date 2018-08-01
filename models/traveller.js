@@ -32,9 +32,11 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
     return this.journeys.reduce((total, journey) => total += journey.distance , 0)
 };
 
-Traveller.prototype.getUniqueModesOfTransport = function () {
-  
+Traveller.prototype.getUniqueModesOfTransport = function () {  
+  return Array.from(new Set(this.getModesOfTransport()));
 };
+
+
 
 
 module.exports = Traveller;
